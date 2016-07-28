@@ -21,7 +21,7 @@ export class HomePage {
 checkWin(score){
     for(var i = 0; i < this.wins.length; i++){
         if((this.wins[i] & score)  === this.wins[i]){
-            if(this.currentPlayer == "Player Two){
+            if(this.currentPlayer == "Player One"){
                 this.newGame();
                 alert("Player 1 Wins");
             } else{
@@ -29,6 +29,10 @@ checkWin(score){
                 alert("Player 2 Wins");
             }
         }    
+    }
+    if(this.count == 10){
+        alert("TIE");
+        this.newGame();
     }
 }
     
@@ -71,8 +75,9 @@ newGame(){
     }
     this.playerOneScore = 0;
     this.playerTwoScore = 0;
+    this.count=1;
+    }
 }
-    
-}
+
 
 
